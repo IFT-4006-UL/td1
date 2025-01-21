@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookRepositoryInMemory implements BookRepository {
-    public List<Book> books = new ArrayList<>();
+    public static List<Book> books = new ArrayList<>();
 
     public void add(Book book) {
         books.add(book);

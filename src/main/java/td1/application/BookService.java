@@ -3,7 +3,7 @@ package td1.application;
 import td1.domain.Book;
 import td1.domain.BookRepository;
 import td1.domain.exceptions.BookNotFoundException;
-import td1.domain.exceptions.BookWithTitleAlreadyExist;
+import td1.domain.exceptions.BookAlreadyExist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class BookService {
 
     public void addBook(String title, String author, int year) {
         if (bookRepository.findByTitle(title) != null) {
-            throw new BookWithTitleAlreadyExist();
+            throw new BookAlreadyExist();
         }
 
         Book book = new Book(title, author, year);
